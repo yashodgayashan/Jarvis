@@ -1,0 +1,5 @@
+httpx>=0.28,<1
+sounddevice>=0.5
+numpy>=2.0
+webrtcvad-wheels>=2.0.14
+faster-whisper>=1.0.3
