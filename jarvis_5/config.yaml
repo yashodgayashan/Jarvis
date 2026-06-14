@@ -1,0 +1,23 @@
+# jarvis_5 configuration. Keep this file small; only put choices you'll actually
+# flip during the workshop. Everything else stays as code defaults.
+
+model: qwen2.5:7b
+ollama_url: http://localhost:11434/api/chat
+
+voice: en_US-lessac-medium
+edge_voice: en-US-JennyNeural
+
+mcp:
+  # Every server here gets spawned at startup. The bridge calls list_tools()
+  # and registers each one as `mcp_<server>_<tool>` in the registry.
+  servers:
+    - name: filesystem
+      command: npx
+      args: ["-y", "@modelcontextprotocol/server-filesystem", "~/jarvis_workspace"]
+    # GitHub: reads GITHUB_PERSONAL_ACCESS_TOKEN from your shell environment
+    # (the bridge passes os.environ through). Export it before running:
+    #   export GITHUB_PERSONAL_ACCESS_TOKEN=ghp_xxx
+    # Without the token this server fails to start and is skipped (logged to logs/).
+    # - name: github
+    #   command: npx
+    #   args: ["-y", "@modelcontextprotocol/server-github"]
