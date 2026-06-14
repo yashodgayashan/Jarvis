@@ -1,0 +1,9 @@
+httpx>=0.28,<1
+sounddevice>=0.5
+numpy>=2.0
+webrtcvad-wheels>=2.0.14
+faster-whisper>=1.0.3
+edge-tts>=7.2,<8
+ddgs>=9.0
+pathvalidate>=3.3.1 
+piper-tts>=1.4.2
